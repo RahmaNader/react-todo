@@ -15,7 +15,7 @@ export function TodoCard(props) {
 
     return (
         <div className="card todo-item">
-            <span>{todoIndex+1}- {todo.input}</span>
+            <span>{todo.input}</span>
             <div className="todo-buttons">
                 <button onClick={handleButtonClick} disabled={todo.complete}>
                     <h6>{text}</h6>
