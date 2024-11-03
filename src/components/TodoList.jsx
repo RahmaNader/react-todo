@@ -1,27 +1,37 @@
 import { TodoCard } from "./TodoCard";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-export function TodoLList(props){
+export function TodoList(props) {
+    const { todos, selectedTab } = props
 
-    const {todos} = props
-    const tab = 'In-progress'
-    const filteredTodosList = tab === 'All' ? todos 
-    : tab === 'Completed' ? todos.filter(val => val.complete)
-    : todos.filter(val => !val.complete)    
 
-    
+    const filterTodosList = selectedTab === 'All' ?
+        todos :
+        selectedTab === 'Completed' ?
+            todos.filter(val => val.complete) :
+            todos.filter(val => !val.complete)
 
     return (
         <>
-            {filteredTodosList.map((todo,todoIndex) => {
+            {filterTodosList.map((todo, todoIndex) => {
                 return (
-                    <TodoCard key={todoIndex} todoIndex={todoIndex} {...props} />
+                    <TodoCard
+                        key={todoIndex}
+                        todoIndex={todos.findIndex(val => val.input == todo.input)}
+                        {...props}
+                        todo={todo} 
+                        />
                 )
             })}
+
         </>
     )
 }
 
-TodoLList.propTypes = {
-    todos: PropTypes.array.isRequired
-}
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.shape({
+        input: PropTypes.string.isRequired,
+        complete: PropTypes.bool.isRequired
+    })).isRequired,
+    selectedTab: PropTypes.string.isRequired
+};

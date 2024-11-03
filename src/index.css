@@ -129,8 +129,9 @@ hr {
 .todo-item {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.1rem;
   border: none;
+  margin-right: 0;
 }
 
 .todo-complete {
