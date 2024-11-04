@@ -200,7 +200,36 @@ address {
 }
 
 aside {
-    float: right;
+        /* Fanta.css */
+    
+    /* Default (Bright) Mode */
+    .app {
+      background-color: white;
+      color: black;
+    }
+    
+    /* Dark Mode */
+    .app.dark-mode {
+      background-color: black;
+      color: white;
+    }
+    
+    /* Theme Toggle Button */
+    .theme-toggle-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .theme-toggle-button:hover {
+      background-color: #0056b3;
+    }oat: right;
     width: 40%;
     padding: 0.75rem;
     margin: 0.5rem;
@@ -673,4 +702,35 @@ details[open] summary {
     input {
         max-width: 600px;
     }
+}
+
+/* Fanta.css */
+
+/* Default (Bright) Mode */
+.app {
+  background-color: white;
+  color: black;
+}
+
+/* Dark Mode */
+.app.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-toggle-button:hover {
+  background-color: #0056b3;
 }
